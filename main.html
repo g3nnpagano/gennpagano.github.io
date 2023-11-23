@@ -1,0 +1,388 @@
+<!-- This line defines the document type and language of the HTML document -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- This section contains metadata about the document -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- The title of the document that appears on the browser tab -->
+  <title>GennPagano</title>
+  <!-- Favicon links for different platforms -->
+  <link rel="apple-touch-icon" sizes="180x180" href="\img\favicon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="\img\favicon.pngg" />
+  <link rel="icon" type="image/png" sizes="16x16" href="\img\favicon.png" />
+  <link rel="manifest" href="\img\favicon.png" />
+  <!-- Link to an external stylesheet for styling -->
+  <link rel="stylesheet" href="styles/styles.css" />
+  <!-- Preconnect links to external resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Link to Google Fonts for custom font styling -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200&display=swap" rel="stylesheet" />
+  <!-- Link to Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="main-content">
+  <!-- Popup div for displaying a welcome message -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <!-- Welcome message and a button to close the popup -->
+      <p>Welcome to my website! <br>Thank you for your visit. <br> I'd like to share with you that this site was created
+        to learn and challenge myself in this field as well. <br> Although you might notice that the design isn't the
+        trendiest, it's the result of my efforts to acquire new skills and tackle challenges in the world of web
+        development. <br> I appreciate your understanding and would be grateful for any feedback for continuous
+        improvement. <br> Thank you! </p>
+      <button onclick="closePopup()">Chiudi</button>
+    </div>
+  </div>
+
+  <div class="popup-overlay" id="popup-overlay"></div>
+  <!-- Header section with personal information -->
+  <header class="section sec1 header active" id="home">
+    <div class="header-content">
+      <!-- Left header with an image -->
+      <div class="left-header">
+        <div class="h-shape"></div>
+        <div class="image">
+          <img src="img\photo1700325275-removebg-preview.png" alt="foto-profilo" />
+        </div>
+      </div>
+      <!-- Right header with name, subtitle, and bio -->
+      <div class="right-header">
+        <h1 class="name">Hi, <span>I'm Gennaro A. Pagano</span></h1>
+        <div class="subtitle">
+          <strong>Cobol Analyst and AI & Blockchain Student</strong>
+        </div>
+        <p> 22 years old, blending traditional expertise with a passion for emerging technologies like <strong>AI and
+            Blockchain.</strong> AI & Blockchain student with a commitment to <strong>ongoing learning</strong>. Exploring
+          innovative solutions to contribute to the ever-evolving tech landscape. <strong>Effective team player with
+            strong communication skills.</strong> Adaptable to dynamic work environments, contributing to collective
+          success. Known for a methodical problem-solving approach. Enjoys tackling challenges and implementing practical
+          solutions. <br />
+          <br />
+        </p>
+        <!-- Button to download the CV -->
+        <div class="btn-con">
+          <a href="https://drive.google.com/file/d/1JDEMJBMSRkcIbMYWM1CL6Nb9BRt0w_6t/view?usp=sharing"
+            class="main-btn" target="_blank">
+            <span class="btn-text">Download my CV</span>
+            <span class="btn-icon">
+              <i class="fas fa-download"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+</body>
+
+<!-- Main content of the page -->
+<main>
+
+  <!-- About Me section -->
+  <section class="section sec2 about" id="about" title="About Me">
+    <div class="main-title">
+      <h2>About <span>me</span></h2>
+    </div>
+    <!-- Content of the About Me section -->
+    <div class="about-content">
+      <div class="left-about">
+        <!-- Button to download the CV -->
+        <div class="btn-con">
+          <a href="https://drive.google.com/file/d/1JDEMJBMSRkcIbMYWM1CL6Nb9BRt0w_6t/view?usp=sharing"
+            class="main-btn" target="_blank">
+            <span class="btn-text">Download my CV</span>
+            <span class="btn-icon">
+              <i class="fas fa-download"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="right-about">
+        <!-- Information about education and experience -->
+        <div class="about-item">
+          <div class="abt-text">
+            <p class="large-text">1 </p>
+            <p class="small-text">Bachelor's Degree <br />in Computer Science </p>
+          </div>
+        </div>
+        <div class="about-item">
+          <div class="abt-text">
+            <p class="large-text">2+ </p>
+            <p class="small-text">Years of <br />Experience </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Additional information about technical skills -->
+    <div class="about-stats">
+      <h4 class="stat-tile">Technical Skills</h4>
+      <p> 🚀 <strong>Java & Python Enthusiast:</strong> Well-versed in Java and Python, I leverage these languages to craft
+        efficient and robust solutions. <br> 🔍 <strong> Data Explorer:</strong> With expertise in Python, I delve into data
+        analysis, extracting meaningful insights to drive informed decisions. <br> 💡 <strong>Solidity Developer:</strong>
+        Proficient in Solidity, I explore the world of blockchain, creating secure and decentralized applications. <br>
+        🌐 <strong>Web Developer:</strong> Mastering web programming languages (HTML, CSS, JavaScript), I bring ideas to
+        life on the digital canvas, creating engaging user experiences. <br> 🕹️ <strong>Cobol Analyst:</strong> As a Cobol
+        Analyst, I navigate legacy systems, ensuring seamless integration with modern technologies. <br> 🔧 <strong>ServiceNow
+          Administrator:</strong> With an 80% proficiency, I excel in ServiceNow administration, streamlining workflows for
+        enhanced efficiency. <br>
+      </p>
+      <br>
+      <br>
+      <br>
+      <hr>
+      <!-- Progress bars for visualizing skill proficiency -->
+      <div class="progress-bars">
+        <div class="progress-bar">
+            <p class="prog-title">
+                Data Analysis with Python
+            </p>
+            <div class="progress-con">
+                <p class="prog text">
+                    50%
+                </p>
+                <div class="progress">
+                    <span class = "python"></span>
+                </div>
+            </div>
+        </div>
+        <div class="progress-bar">
+            <p class="prog-title">
+                Sviluppo Web (Html,Css,Javascript)
+            </p>
+            <div class="progress-con">
+                <p class="prog text">
+                    90%
+                </p>
+                <div class="progress">
+                    <span class = "html"></span>
+                </div>
+            </div>
+        </div>
+        <div class="progress-bar">
+            <p class="prog-title">
+                Java
+            </p>
+            <div class="progress-con">
+                <p class="prog text">
+                    75%
+                </p>
+                <div class="progress">
+                    <span class = "java"></span>
+                </div>
+            </div>
+        </div>
+        <div class="progress-bar">
+            <p class="prog-title">
+                Solidity
+            </p>
+            <div class="progress-con">
+                <p class="prog text">
+                    50%
+                </p>
+                <div class="progress">
+                    <span class = "solidity"></span>
+                </div>
+            </div>
+        </div>
+        <div class="progress-bar">
+            <p class="prog-title">
+                SQL, Tableau
+            </p>
+            <div class="progress-con">
+                <p class="prog text">
+                    70%
+                </p>
+                <div class="progress">
+                    <span class = "sql"></span>
+                </div>
+            </div>
+        </div>
+        <div class="progress-bar">
+            <p class="prog-title">
+                ServiceNow Administration
+            </p>
+            <div class="progress-con">
+                <p class="prog text">
+                    80%
+                </p>
+                <div class="progress">
+                    <span class = "servicenow"></span>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- Portfolio section -->
+  <section class="section sec3 portfolio" id="portfolio">
+    <div class="main-title">
+      <h2>My <span>Portfolio</span></h2>
+    </div>
+    <p class="port-text">Here you will find different sections showcasing the various areas of interest in the projects
+      I have developed for the portfolio. </p>
+    <!-- Portfolio items with images and links -->
+    <div class="portfolios">
+      <div class="portfolio-item">
+        <div class="image">
+          <img src="img\513d26ca2934939353734bfa365a4ec5bf3e5671.jpeg" alt="">
+        </div>
+        <div class="hover-item">
+          <h3>Projects Source</h3>
+          <div class="icons">
+            <a href="https://github.com/g3nnpagano/Solidity-Codes" target="_blank">
+              <i class="fa-brands fa-square-github"></i>
+            </a>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <div class="image">
+            <img src="img\js-html-css.png" alt="">
+          </div>
+          <div class="hover-item">
+            <h3>Projects Source</h3>
+            <div class="icons">
+              <a href="www.google.com" target="_blank">
+                <i class="fa-brands fa-square-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- Work Experiences section -->
+  <section class="section sec4 work-experiences" id="work-experiences">
+    <div class="main-title">
+      <h2 style="color: black;">Work <span>
+          <strong>Experiences</strong>
+        </span>
+      </h2>
+    </div>
+    <!-- Timeline of work experiences with company logos and descriptions -->
+    <div class="timeline">
+      <div class="timeline-container-left-container" onmouseover="flipCard(this)" onmouseout="flipCard(this)">
+        <img src="img\accenture-logo-new.png">
+        <div class="text-box">
+          <h2>Accenture S.p.A.</h2>
+          <small>2023 - still</small>
+          <p>Junior Cobol Analyst</p>
+          <span class="left-container-arrow"></span>
+          <div class="description"> Working with the COBOL programming language to develop, test, and maintain software
+            applications. </div>
+        </div>
+      </div>
+      <div class="timeline-container-right-container" onmouseover="flipCard(this)" onmouseout="flipCard(this)">
+        <img src="img\accenture-logo-new.png">
+        <div class="text-box">
+          <h2>Accenture S.p.A.</h2>
+          <small>2022 - 2023</small>
+          <p>Certified ServiceNow Administrator</p>
+          <span class="right-container-arrow"></span>
+          <div class="description">Engaged in overseeing the ServiceNow platform's configuration, testing, and maintenance, optimizing platform functionality. </div>
+        </div>
+      </div>
+      <div class="timeline-container-left-container" onmouseover="flipCard(this)" onmouseout="flipCard(this)">
+        <img src="img\GS.png">
+        <div class="text-box">
+          <h2>Grandi Scuole S.p.A.</h2>
+          <small>2020 - 2022</small>
+          <p>Tutor for Students (Informatic & Mathematic Fields).</p>
+          <span class="left-container-arrow"></span>
+          <div class="description"> I helped a lot of students struggling with their homework, in particular in Informatic and Mathematic fields. </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Me section -->
+  <section class="section sec5 contact" id="contact">
+    <div class="contact-container">
+      <div class="main-title">
+        <h2>Contact <span>Me</span></h2>
+      </div>
+      <!-- Contact information and a form for users to get in touch -->
+      <div class="contact-content-con">
+        <div class="left-contact">
+          <h4>Get in Touch!</h4>
+          <p> You can contact me there with these contact infos or you can compile the form and get in touch with me!
+            <hr>
+            <br>
+            <br>
+          </p>
+          <!-- Contact information with icons -->
+          <div class="contact-info">
+            <div class="icon">
+              <i class="fa-solid fa-location-crosshairs"></i> Location: Naples
+            </div>
+            <div class="icon">
+              <i class="fa-solid fa-envelope"></i> Email: pgadriano01@gmail.com
+            </div>
+            <div class="icon">
+              <i class="fa-solid fa-phone"></i> Mobile Number: 3517890782
+            </div>
+            <div class="icon">
+              <i class="fa-brands fa-linkedin"></i> LinkedIn <a href="https://www.linkedin.com/in/gennaro-a-pagano-3b5568289/" target="_blank" style="text-decoration: underline; color: blue; font-style: italic;">Clicca qui</a>
+            </div>
+          </div>
+        </div>
+        <div class="right-contact">
+          <div class="contact-form">
+            <div class="input-control">
+              <input type="text" id="name" required placeholder="Your Name" class="form-input">
+              <input type="email" id="email" required placeholder="Your Email" class="form-input">
+            </div>
+            <div class="input-control">
+              <input type="text" id="subject" required placeholder="Subject" class="form-input">
+            </div>
+            <div class="input-control">
+              <textarea id="message" cols="60" rows="8" class="form-textarea" placeholder="Your Message"></textarea>
+            </div>
+            <div class="submit-btn">
+              <button type="button" onclick="sendEmail()" class="styled-btn">Submit</button>
+              <script src=app.js></script>
+              <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+              <script type="text/javascript">
+                (function() {
+                  emailjs.init("EQ_eL_7MyjVFBvwoq");
+                })();
+              </script>
+            </div>
+          </div>
+        </div>
+  </section>
+</main>
+
+<!-- Controls for navigating different sections -->
+<div class="controlls">
+    <!-- Control buttons for each section -->
+    <div class="control control-1 active-btn" data-id="home" title="Homepage">
+      <i class="fa-solid fa-house" style="color: #1eff00;"></i>
+    </div>
+    <div class="control control-2 " data-id="about" title="About Me">
+      <i class="fa-sharp fa-solid fa-user-tie" style="color: #1eff00;"></i>
+    </div>
+    <div class="control control-3 " data-id="portfolio" title="Portfolio">
+      <i class="fa-solid fa-book " style="color: #1eff00;"></i>
+    </div>
+    <div class="control control-4 " data-id="work-experiences" title="Work Experiences">
+      <i class="fa-solid fa-briefcase " style="color: #1eff00;"></i>
+    </div>
+    <div class="control control-5 " data-id="contact" title="Contact Me">
+      <i class="fa-solid fa-address-card" style="color: #1eff00;"></i>
+    </div>
+  </div>
+  
+  <!-- Script for controlling the navigation and handling form submission -->
+  <script src="app.js"></script>
+</body>
+</html>
