@@ -320,6 +320,19 @@ font-size:1.3rem;
   section {
     padding: 3rem 1rem; /* Riduci il padding su schermi più piccoli */
   }
+   .header-content .right-header {
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 13px;
+  }
+  .right-header .btn-text {
+    padding: 0.5rem; /* Riduci il padding per dispositivi più piccoli */
+  }
+
+  .right-header .btn-icon {
+    padding: 0.8rem; /* Riduci il padding per dispositivi più piccoli */
+  }
   .right-header .btn-text {
     padding: 0.5rem; /* Riduci il padding per dispositivi più piccoli */
   }
