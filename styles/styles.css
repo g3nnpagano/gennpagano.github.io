@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -311,18 +312,90 @@ font-size:1.3rem;
   padding:4rem;
   margin-right: 4rem;
   flex:2;
-  
-  
-
 }
 
 /* Portfolios */
 
-@media screen and (max-width: 768px) {
-  /* Add specific styles for screens with a maximum width of 768 pixels */
-  .header-content {
-      grid-template-columns: 1fr; /* Change to one column for smaller screens */
+@media only screen and (max-width: 800px) {
+  section {
+    padding: 3rem 1rem; /* Riduci il padding su schermi più piccoli */
   }
+  .right-header .btn-text {
+    padding: 0.5rem; /* Riduci il padding per dispositivi più piccoli */
+  }
+
+  .right-header .btn-icon {
+    padding: 0.8rem; /* Riduci il padding per dispositivi più piccoli */
+  }
+  .popup {
+    padding: 10px;
+  }
+
+  .popup-content {
+    max-width: 40%; /* Riduci la larghezza massima del contenuto del popup per dispositivi più piccoli */
+  }
+  .timeline .timeline-container-left-container,
+  .timeline .timeline-container-right-container {
+    padding:2px;
+  }
+
+  .timeline-container-left-container img,
+  .timeline-container-right-container img {
+    width: 40px;
+    overflow: hidden; /* Aggiunto overflow: hidden per gestire il testo che esce dai contenitori */
+  }
+  .text-box h2 {
+    font-size: 10px; /* Riduci la dimensione del titolo su schermi più piccoli */
+  }
+
+  .text-box small {
+    font-size: 12px; /* Riduci la dimensione del testo più piccolo su schermi più piccoli */
+  }
+
+  .text-box p {
+    font-size: 14px; /* Riduci la dimensione del paragrafo su schermi più piccoli */
+  }
+  .timeline-container-right-container .text-box {
+    width: auto;
+   
+    word-wrap: break-word;
+    font-size: 7px;
+  }
+  .timeline-container-left-container .text-box {
+width: auto;    word-wrap: break-word; /* Aggiunta per evitare che il testo esca dal contenitore */
+    font-size: 7px;
+  }
+  .description {
+    padding: 10px; /* Riduci il padding per adattarsi a schermi più piccoli */
+    font-size: 14px; /* Riduci la dimensione del testo per una migliore leggibilità su schermi più piccoli */
+  }
+
+  .left-container-arrow,
+  .right-container-arrow {
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+
+  .left-container-arrow {
+    border-right: 10px solid white;
+    right: -3px;
+  }
+
+  .right-container-arrow {
+    border-left: 10px solid white;
+    left: -3px;
+  }
+  .contact-content-con {
+    flex-direction: column; /* Cambia la direzione in colonna */
+    align-items: center; /* Allinea al centro */
+  }
+
+  .contact-content-con .left-contact {
+    padding: 2rem; /* Modifica il padding per adattarsi meglio */
+    margin-right: 0;
+    flex: 1; /* Riduci la larghezza del contenitore sinistro */
+  }
+ 
 }
   .about-content {
     display:grid;
@@ -659,12 +732,12 @@ font-size:1.3rem;
 
 .main-title h2 .bg-text {
   position: absolute;
-  top: -10%; /* Aggiunto il top a 0 per sovrapporre alla scritta "me" */
+  top: -10%; 
   left: 50%;
   color: var(--color-grey-3);
   transition: all .4s ease-in-out;
   z-index: -1;
-  transform: translateX(-50%); /* Modificato il trasform per centrare orizzontalmente */
+  transform: translateX(-50%); 
   font-weight: 800;
   font-size: 4.9rem;
 }
@@ -835,14 +908,9 @@ font-size:1.3rem;
 .timeline .timeline-container-left-container:nth-child(2){
   animation-delay: 4s;
 }
-@media screen and (max-width:600px){
 
-.timeline{
-  margin:50px auto;
-}
-}
 
-/* Add the following styles to your existing CSS */
+
 .timeline-container-right-container.flipped .text-box,
 .timeline-container-left-container.flipped .text-box {
   transform: rotateY(180deg);
@@ -873,7 +941,7 @@ font-size:1.3rem;
 
 
 .popup {
-  /* Aggiungi uno stile per rendere il popup visibile */
+
   display: block;
   position: fixed;
   top: 50%;
@@ -885,8 +953,10 @@ font-size:1.3rem;
 }
 
 .popup-content {
-  max-width: 400px;
+  max-width: 100%; /* Fai sì che il contenuto del popup sia largo quanto lo schermo */
+  max-height: 80vh; /* Limita l'altezza massima del popup al 80% dell'altezza dello schermo */
   margin: 0 auto;
+  overflow-y: auto; /* Aggiungi uno scorrimento verticale se necessario */
 }
 
 .popup p {
@@ -917,3 +987,5 @@ font-size:1.3rem;
   z-index: 998;
   display: none;
 }
+
+
