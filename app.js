@@ -71,11 +71,18 @@ function sendEmail() {
         });
 }
 function flipCard(container) {
-    container.classList.toggle('flipped');
-  }
-  document.addEventListener("DOMContentLoaded", function() {
-    showPopup();
-  });
+    // Verifica se la larghezza della finestra è maggiore di 768 pixel (puoi regolare questo valore in base alle tue esigenze)
+    if (window.innerWidth > 768) {
+        container.classList.toggle('flipped');
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Verifica se la larghezza della finestra è maggiore di 768 pixel prima di chiamare la funzione showPopup()
+    if (window.innerWidth > 768) {
+        showPopup();
+    }
+});
   
   function showPopup() {
     var popup = document.getElementById("popup");
