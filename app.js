@@ -1,113 +1,153 @@
-function PageTransitions() {
-    const sectBtns = document.querySelectorAll('.control');
-    const allSections = document.querySelector('.main-content');
-    const sections = document.querySelectorAll('.section');
+$(document).ready(function() {
 
-    sectBtns.forEach((btn) => {
-        btn.addEventListener('click', function () {
-            // remove selected from the other buttons
-            sectBtns.forEach((otherBtn) => {
-                otherBtn.classList.remove('active-btn');
-            });
-
-            this.classList.add('active-btn');
-
-            // hide sections
-            sections.forEach((section) => {
-                section.classList.remove('active');
-            });
-
-            const id = this.dataset.id;
-            const element = document.getElementById(id);
-            element.classList.add('active');
-        });
+  //sticky header
+    $(window).scroll(function() {
+      if ($(this).scrollTop() > 1) {
+        $(".header-area").addClass("sticky");
+      } else {
+        $(".header-area").removeClass("sticky");
+      }
+  
+      // Update the active section in the header
+      updateActiveSection();
     });
-   
+  
+    $(".header ul li a").click(function(e) {
+      e.preventDefault(); 
+  
+      var target = $(this).attr("href");
+  
+      if ($(target).hasClass("active-section")) {
+        return; 
+      }
+  
+      if (target === "#home") {
+        $("html, body").animate(
+          {
+            scrollTop: 0 
+          },
+          500
+        );
+      } else {
+        var offset = $(target).offset().top - 40; 
+  
+        $("html, body").animate(
+          {
+            scrollTop: offset
+          },
+          500
+        );
+      }
+  
+      $(".header ul li a").removeClass("active");
+      $(this).addClass("active");
+    });
+  
 
-    // Set the initial active state for the first button and section
-    sectBtns[0].classList.add('active-btn');
-    sections[0].classList.add('active');
-}
+    //Initial content revealing js
+    ScrollReveal({
+      distance: "100px",
+      duration: 2000,
+      delay: 200
+    });
+  
+    ScrollReveal().reveal(".header a, .profile-photo, .about-content, .education", {
+      origin: "left"
+    });
+    ScrollReveal().reveal(".header ul, .profile-text, .about-skills, .internship", {
+      origin: "right"
+    });
+    ScrollReveal().reveal(".project-title, .contact-title", {
+      origin: "top"
+    });
+    ScrollReveal().reveal(".projects, .contact", {
+      origin: "bottom"
+    });
 
-
-
+ 
+  
+  function updateActiveSection() {
+    var scrollPosition = $(window).scrollTop();
+  
+    // Checking if scroll position is at the top of the page
+    if (scrollPosition === 0) {
+      $(".header ul li a").removeClass("active");
+      $(".header ul li a[href='#home']").addClass("active");
+      return;
+    }
+  
+    // Iterate through each section and update the active class in the header
+    $("section").each(function() {
+      var target = $(this).attr("id");
+      var offset = $(this).offset().top;
+      var height = $(this).outerHeight();
+  
+      if (
+        scrollPosition >= offset - 40 &&
+        scrollPosition < offset + height - 40
+      ) {
+        $(".header ul li a").removeClass("active");
+        $(".header ul li a[href='#" + target + "']").addClass("active");
+      }
+    });
+  }
+  
+})
 
 function sendEmail() {
-    // Ottieni i valori dai campi del modulo
-    var nameValue = document.getElementById("name").value;
-    var emailValue = document.getElementById("email").value;
-    var subjectValue= document.getElementById("subject").value;
-    var messageValue = document.getElementById("message").value;
+  // Ottieni i valori dai campi del modulo
+  var nameValue = document.getElementById("name").value;
+  var emailValue = document.getElementById("email").value;
+  var subjectValue= document.getElementById("subject").value;
+  var messageValue = document.getElementById("message").value;
 
-    // Controlla se uno dei campi è vuoto
-    if (!nameValue || !emailValue || !messageValue) {
-        alert("Please fill out all fields before submitting.");
-        return; // Esce dalla funzione se un campo è vuoto
-    }
+  // Controlla se uno dei campi è vuoto
+  if (!nameValue || !emailValue || !messageValue) {
+      alert("Please fill out all fields before submitting.");
+      return; // Esce dalla funzione se un campo è vuoto
+  }
 
-    var params = {
-        name: nameValue,
-        email: emailValue,
-        message: messageValue
-    };
+  var params = {
+      name: nameValue,
+      email: emailValue,
+      message: messageValue
+  };
 
-    const serviceID = "service_nrga72p";
-    const templateID = "template_zin2jfi";
+  const serviceID = "service_nrga72p";
+  const templateID = "template_zin2jfi";
 
-    emailjs.send(serviceID, templateID, params)
-        .then((res) => {
-            // Pulisce i campi del modulo dopo l'invio
-            document.getElementById("name").value = "";
-            document.getElementById("email").value = "";
-            document.getElementById("subject").value= "";
-            document.getElementById("message").value = "";
+  emailjs.send(serviceID, templateID, params)
+      .then((res) => {
+          // Pulisce i campi del modulo dopo l'invio
+          document.getElementById("name").value = "";
+          document.getElementById("email").value = "";
+          document.getElementById("subject").value= "";
+          document.getElementById("message").value = "";
 
-            console.log(res);
-            alert("Your message was sent successfully!");
-        })
-        .catch((err) => {
-            console.log(err);
-            alert("There was an error sending your message. Please try again later.");
-        });
+          console.log(res);
+          alert("Your message was sent successfully!");
+      })
+      .catch((err) => {
+          console.log(err);
+          alert("There was an error sending your message. Please try again later.");
+      });
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Verifica se la larghezza della finestra è maggiore di 768 pixel prima di chiamare la funzione showPopup()
-    if (window.innerWidth > 768) {
-        showPopup();
-    }
-});
-function flipCard(card) {
-    card.style.transform = card.style.transform === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';
+function openPopup() {
+  var overlay = document.getElementById("popup-overlay");
+  var popup = document.getElementById("popup-container");
+
+  overlay.classList.add("popup-opened");
+  popup.classList.add("popup-opened");
+
+  document.body.style.overflow = "hidden";
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Verifica se la larghezza della finestra è maggiore di 768 pixel prima di chiamare la funzione showPopup()
-    if (window.innerWidth > 768) {
-        showPopup();
-    }
-});
-  function showPopup() {
-    var popup = document.getElementById("popup");
-    var overlay = document.getElementById("popup-overlay");
-    popup.style.display = "block";
-    overlay.style.display = "block";
-  }
-  
-  function openPopup() {
-    var popup = document.getElementById("popup");
-    var overlay = document.getElementById("popup-overlay");
-    popup.classList.remove("popup-hidden");
-    overlay.style.display = "block";
-    document.body.style.overflow = "hidden";
-  }
-  
-  function closePopup() {
-    var popup = document.getElementById("popup");
-    var overlay = document.getElementById("popup-overlay");
-    popup.classList.add("popup-hidden");
-    popup.style.display = "none";
-    overlay.style.display = "none";
-    document.body.style.overflow = "auto";
-  }
-PageTransitions();
+
+function closePopup() {
+  var popup = document.getElementById("popup");
+  var overlay = document.getElementById("popup-overlay");
+  popup.classList.add("popup-hidden");
+  overlay.style.display = "none";
+  document.body.style.overflow = "auto";
+}
